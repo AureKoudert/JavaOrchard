@@ -21,5 +21,13 @@ public class TreeTest {
 		treeFruitNbEqual0.removeFruit();
 		assertEquals(0,treeFruitNbEqual0.getFruitNb());
 	}
+	
+	@Test
+	public void getTreeNameTest() {
+		Tree  tree = new Tree("Bernard","green","apple",10);
+		assertEquals("Bernard",tree.getTreeName());
+	}
+	
+	
 
 }
