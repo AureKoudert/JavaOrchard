@@ -4,14 +4,14 @@ public class Tree {
 	private final String treeName;
 	private final String color;
 	private final String fruitName;
-	private int FruitNb;
+	private int fruitNb;
 	
 	
-	public Tree(String treeName,String color, String fruitName, int FruitNb) {
+	public Tree(String treeName,String color, String fruitName, int fruitNb) {
 		this.treeName = treeName;
 		this.color = color;
 		this.fruitName = fruitName;
-		this.FruitNb = FruitNb;
+		this.fruitNb = fruitNb;
 	}
 	
 	public String getTreeName() {
@@ -23,11 +23,17 @@ public class Tree {
 	}
 	
 	public int getFruitNb() {
-		return this.FruitNb;
+		return this.fruitNb;
 	}
 	
 	public String getFruitName() {
 		return this.fruitName;
+	}
+	
+	public void removeFruit() {
+		if (this.fruitNb > 0) {
+		 this.fruitNb  = this.fruitNb -1;
+		}
 	}
 	
 	
