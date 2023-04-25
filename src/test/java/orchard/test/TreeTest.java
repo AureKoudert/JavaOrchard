@@ -28,6 +28,10 @@ public class TreeTest {
 		assertEquals("Bernard",tree.getTreeName());
 	}
 	
-	
+	@Test
+	public void getColorTest() {
+		Tree  tree = new Tree("Bernard","yellow","apple",10);
+		assertEquals("yellow",tree.getColor());
+	}
 
 }
