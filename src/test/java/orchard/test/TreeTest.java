@@ -33,5 +33,11 @@ public class TreeTest {
 		Tree  tree = new Tree("Bernard","yellow","apple",10);
 		assertEquals("yellow",tree.getColor());
 	}
+	
+	@Test
+	public void getFruitNameTest() {
+		Tree tree = new Tree("Bernard","yellow","cherry",10);
+		assertEquals("cherry",tree.getFruitName());
+	}
 
 }
