@@ -20,11 +20,12 @@ public class Dice {
 		}
 		else if(sideNb == 4) {
 			return sideFour;
+		}		
+		else {
+			System.out.println("ça marche pas");
+			return null;
+			
 		}
-		else
-			System.out.println("Problem");
-			return sideOne;
-		
 	}
 	
 	int genererInt(int borneInf, int borneSup){
