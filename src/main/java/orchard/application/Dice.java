@@ -8,7 +8,7 @@ public class Dice {
 	Side sideFour = Side.BLUE;
 	
 	public Side roll() {
-		int sideNb = genererInt(1, 5);
+		int sideNb = generateInt(1, 5);
 		if (sideNb == 1) {
 			return sideOne;
 		}
@@ -28,7 +28,7 @@ public class Dice {
 		}
 	}
 	
-	int genererInt(int borneInf, int borneSup){
+	public int generateInt(int borneInf, int borneSup){
 		 Random random = new Random();
 		 int nb;
 		 nb = borneInf+random.nextInt(borneSup-borneInf);

@@ -11,7 +11,7 @@ import orchard.application.Side;
 public class DiceTest {
 	
 	@Test
-	public void genererIntTest() {
+	public void rollTest() {
 		Dice dice = new Dice();
 		Side generation = dice.roll();
 		assertAll(
@@ -20,8 +20,18 @@ public class DiceTest {
 				() -> assertEquals(generation,(Side.BLUE)),
 				() -> assertEquals(generation,(Side.YELLOW))
 		);
-		
-		
 	}
 
+	
+	@Test
+	public void generateIntTest() {
+		Dice dice = new Dice();
+		int generation = dice.generateInt(1,5);
+		assertAll(
+				() -> assertEquals(generation,(1)),
+				() -> assertEquals(generation,(2)),
+				() -> assertEquals(generation,(3)),
+				() -> assertEquals(generation,(4))
+		);
+	}
 }
