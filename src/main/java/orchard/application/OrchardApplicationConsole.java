@@ -111,8 +111,12 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		Scene scene = new Scene(root, 900, 900);
 		
+		
+		
 		primaryStage.setTitle("Orchard");
 		primaryStage.setScene(scene);
+		File file_ico = new File("C:\\Users\\iut\\javabut1\\image\\raven_ico.jpg");
+		primaryStage.getIcons().add(new Image(new FileInputStream(file_ico)));
 		primaryStage.show();
 	}
 	
