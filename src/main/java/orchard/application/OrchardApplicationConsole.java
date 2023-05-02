@@ -1,8 +1,14 @@
 package orchard.application;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
@@ -58,10 +64,24 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		*/
 	}
 	
-	public void start(Stage primaryStage) {
-		StackPane root = new StackPane();
+	public void start(Stage primaryStage) throws FileNotFoundException{
+		GridPane root = new GridPane();
 		
-		Scene scene = new Scene(root, 300, 300);
+		File file = new File("C:\\Users\\iut\\javabut1\\image\\tree_img.png");
+		Image img1 = new Image(new FileInputStream(file));
+		
+		ImageView imageView = new ImageView(img1);
+		
+		imageView.setFitHeight(400); 
+	    imageView.setFitWidth(400); 
+		
+		root.add(imageView, 0, 0);		
+		
+		
+		
+		
+		
+		Scene scene = new Scene(root, 900, 900);
 		
 		primaryStage.setTitle("Orchard");
 		primaryStage.setScene(scene);
