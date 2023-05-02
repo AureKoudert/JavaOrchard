@@ -1,11 +1,15 @@
 package orchard.application;
 
-import java.util.ArrayList;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
-public class OrchardApplicationConsole {
-	private static int turnNb = 0;
+public class OrchardApplicationConsole extends javafx.application.Application{
+	//private static int turnNb = 0;
 	public static void main(String[] args) {
-		
+		Application.launch(args);
+		/*
 		ArrayList<Tree> treeList = new ArrayList<Tree>();
 		
 		treeList.add(new Tree("appleTree","green","apple",10));
@@ -51,14 +55,20 @@ public class OrchardApplicationConsole {
 		System.out.println("\n\n\n");
 		System.out.println("# ~ Game Over ~ #");
 		System.out.println("    Turn n°"+turnNb);
+		*/
+	}
 	
+	public void start(Stage primaryStage) {
+		StackPane root = new StackPane();
 		
-
+		Scene scene = new Scene(root, 300, 300);
 		
-		
-
+		primaryStage.setTitle("Orchard");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
 
 
 }
+
