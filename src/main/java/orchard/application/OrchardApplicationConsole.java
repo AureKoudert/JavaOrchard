@@ -8,7 +8,9 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
@@ -66,16 +68,42 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	
 	public void start(Stage primaryStage) throws FileNotFoundException{
 		GridPane root = new GridPane();
+		for (int i = 0 ; i < 5 ; i ++) {
+			ColumnConstraints column = new ColumnConstraints(300);
+	         root.getColumnConstraints().add(column);
+	     }
+		
+		for (int i = 0 ; i < 5 ; i ++) {
+			RowConstraints row = new RowConstraints(300);
+	         root.getRowConstraints().add(row);
+	     }
 		
 		File file = new File("C:\\Users\\iut\\javabut1\\image\\tree_img.png");
-		Image img1 = new Image(new FileInputStream(file));
+		Image imgTree = new Image(new FileInputStream(file));
 		
-		ImageView imageView = new ImageView(img1);
 		
-		imageView.setFitHeight(400); 
-	    imageView.setFitWidth(400); 
+		ImageView imageView1 = new ImageView(imgTree);
+		ImageView imageView2 = new ImageView(imgTree);
+		ImageView imageView3 = new ImageView(imgTree);
+		ImageView imageView4 = new ImageView(imgTree);
 		
-		root.add(imageView, 0, 0);		
+		imageView1.setFitHeight(300); 
+	    imageView1.setFitWidth(300); 
+	    
+	    imageView2.setFitHeight(300); 
+	    imageView2.setFitWidth(300); 
+	    
+	    imageView3.setFitHeight(300); 
+	    imageView3.setFitWidth(300); 
+	    
+	    imageView4.setFitHeight(300); 
+	    imageView4.setFitWidth(300); 
+		
+	    root.add(imageView1, 0, 0);
+	    root.add(imageView2, 2, 0);
+		root.add(imageView3, 0, 2);		
+		root.add(imageView4, 2, 2);	
+		
 		
 		
 		
