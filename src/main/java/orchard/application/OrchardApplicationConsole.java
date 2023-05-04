@@ -85,43 +85,20 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		File fileTree = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
 		Image imgTree = new Image(new FileInputStream(fileTree));
 		
-		File fileApple = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png");
-		Image imgApple = new Image(new FileInputStream(fileApple));
-		ImageView imageViewApple = new ImageView(imgApple);
-		imageViewApple.setFitHeight(35); 
-		imageViewApple.setFitWidth(35);
+	
+		ImageView imageViewAppleTop1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleTop2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleTop3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
 		
-		ImageView imageViewApple2 = new ImageView(imgApple);
-		imageViewApple2.setFitHeight(35); 
-		imageViewApple2.setFitWidth(35);
+		ImageView imageViewAppleMid1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleMid2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleMid3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleMid4 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
 		
-		ImageView imageViewApple3 = new ImageView(imgApple);
-		imageViewApple3.setFitHeight(35); 
-		imageViewApple3.setFitWidth(35);
-		
-		ImageView imageViewAppleMid1 = new ImageView(imgApple);
-		imageViewAppleMid1.setFitHeight(35); 
-		imageViewAppleMid1.setFitWidth(35);
-		ImageView imageViewAppleMid2 = new ImageView(imgApple);
-		imageViewAppleMid2.setFitHeight(35); 
-		imageViewAppleMid2.setFitWidth(35);
-		ImageView imageViewAppleMid3 = new ImageView(imgApple);
-		imageViewAppleMid3.setFitHeight(35); 
-		imageViewAppleMid3.setFitWidth(35);
-		ImageView imageViewAppleMid4 = new ImageView(imgApple);
-		imageViewAppleMid4.setFitHeight(35); 
-		imageViewAppleMid4.setFitWidth(35);
-		
-		ImageView imageViewAppleBot1 = new ImageView(imgApple);
-		imageViewAppleBot1.setFitHeight(35); 
-		imageViewAppleBot1.setFitWidth(35);
-		ImageView imageViewAppleBot2 = new ImageView(imgApple);
-		imageViewAppleBot2.setFitHeight(35); 
-		imageViewAppleBot2.setFitWidth(35);
-		ImageView imageViewAppleBot3 = new ImageView(imgApple);
-		imageViewAppleBot3.setFitHeight(35); 
-		imageViewAppleBot3.setFitWidth(35);
-		
+		ImageView imageViewAppleBot1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleBot2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		ImageView imageViewAppleBot3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+
 		
 		
 		
@@ -173,9 +150,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    vBox.setPadding(new Insets(0, 0, 40, 0));
 	    
 	    
-	    hBoxTop.getChildren().add(imageViewApple);
-	    hBoxTop.getChildren().add(imageViewApple2);
-	    hBoxTop.getChildren().add(imageViewApple3);
+	    hBoxTop.getChildren().add(imageViewAppleTop1);
+	    hBoxTop.getChildren().add(imageViewAppleTop2);
+	    hBoxTop.getChildren().add(imageViewAppleTop3);
 	    hBoxTop.setAlignment(Pos.CENTER);
 	    hBoxTop.setSpacing(30);
 	    
@@ -216,7 +193,14 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	}
 	
 	
-
+	public ImageView imageCreation(String imagePath, int height, int width) throws FileNotFoundException{
+		File file = new File(imagePath);
+		Image img = new Image(new FileInputStream(file));
+		ImageView imgView = new ImageView(img);
+		imgView.setFitHeight(height);
+		imgView.setFitWidth(width);
+		return imgView;
+	}
 
 }
 
