@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,8 +82,47 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	         root.getRowConstraints().add(row);
 	     }
 		
-		File file = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
-		Image imgTree = new Image(new FileInputStream(file));
+		File fileTree = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
+		Image imgTree = new Image(new FileInputStream(fileTree));
+		
+		File fileApple = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png");
+		Image imgApple = new Image(new FileInputStream(fileApple));
+		ImageView imageViewApple = new ImageView(imgApple);
+		imageViewApple.setFitHeight(35); 
+		imageViewApple.setFitWidth(35);
+		
+		ImageView imageViewApple2 = new ImageView(imgApple);
+		imageViewApple2.setFitHeight(35); 
+		imageViewApple2.setFitWidth(35);
+		
+		ImageView imageViewApple3 = new ImageView(imgApple);
+		imageViewApple3.setFitHeight(35); 
+		imageViewApple3.setFitWidth(35);
+		
+		ImageView imageViewAppleMid1 = new ImageView(imgApple);
+		imageViewAppleMid1.setFitHeight(35); 
+		imageViewAppleMid1.setFitWidth(35);
+		ImageView imageViewAppleMid2 = new ImageView(imgApple);
+		imageViewAppleMid2.setFitHeight(35); 
+		imageViewAppleMid2.setFitWidth(35);
+		ImageView imageViewAppleMid3 = new ImageView(imgApple);
+		imageViewAppleMid3.setFitHeight(35); 
+		imageViewAppleMid3.setFitWidth(35);
+		ImageView imageViewAppleMid4 = new ImageView(imgApple);
+		imageViewAppleMid4.setFitHeight(35); 
+		imageViewAppleMid4.setFitWidth(35);
+		
+		ImageView imageViewAppleBot1 = new ImageView(imgApple);
+		imageViewAppleBot1.setFitHeight(35); 
+		imageViewAppleBot1.setFitWidth(35);
+		ImageView imageViewAppleBot2 = new ImageView(imgApple);
+		imageViewAppleBot2.setFitHeight(35); 
+		imageViewAppleBot2.setFitWidth(35);
+		ImageView imageViewAppleBot3 = new ImageView(imgApple);
+		imageViewAppleBot3.setFitHeight(35); 
+		imageViewAppleBot3.setFitWidth(35);
+		
+		
 		
 		
 		ImageView imageView1 = new ImageView(imgTree);
@@ -102,18 +143,61 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    imageView4.setFitWidth(300); 
 		
 	    root.add(imageView1, 0, 0);
-	    VBox vBox = new VBox();
-	    root.add(vBox, 0, 0);
-	    HBox hBoxTop = new HBox();
-	    HBox hBoxMid = new HBox();
-	    HBox hBoxBot = new HBox();
-	    
-	    
-	    
-	    
 	    root.add(imageView2, 2, 0);
 		root.add(imageView3, 0, 2);		
 		root.add(imageView4, 2, 2);	
+		
+	    
+	    VBox vBox = new VBox();
+	    vBox.setAlignment(Pos.CENTER);
+	    root.add(vBox, 0, 0);
+	   
+	    
+	    HBox hBoxTop = new HBox(3);
+	    HBox hBoxMid = new HBox(4);
+	    HBox hBoxBot = new HBox(3);
+	    
+	    hBoxTop.setPrefHeight(10);
+	    hBoxTop.setPrefWidth(10);
+	    vBox.getChildren().add(hBoxTop);
+	    
+	    hBoxMid.setPrefHeight(10);
+	    hBoxMid.setPrefWidth(10);
+	    vBox.getChildren().add(hBoxMid);
+	    
+	    hBoxBot.setPrefHeight(10);
+	    hBoxBot.setPrefWidth(10);
+	    vBox.getChildren().add(hBoxBot);
+	    
+	    vBox.setSpacing(10);
+	    vBox.setPadding(new Insets(0, 0, 40, 0));
+	    
+	    
+	    hBoxTop.getChildren().add(imageViewApple);
+	    hBoxTop.getChildren().add(imageViewApple2);
+	    hBoxTop.getChildren().add(imageViewApple3);
+	    hBoxTop.setAlignment(Pos.CENTER);
+	    hBoxTop.setSpacing(30);
+	    
+	    hBoxMid.getChildren().add(imageViewAppleMid1);
+	    hBoxMid.getChildren().add(imageViewAppleMid2);
+	    hBoxMid.getChildren().add(imageViewAppleMid3);
+	    hBoxMid.getChildren().add(imageViewAppleMid4);
+	    hBoxMid.setAlignment(Pos.CENTER);
+	    hBoxMid.setSpacing(20);
+	    
+	    hBoxBot.getChildren().add(imageViewAppleBot1);
+	    hBoxBot.getChildren().add(imageViewAppleBot2);
+	    hBoxBot.getChildren().add(imageViewAppleBot3);
+	    hBoxBot.setAlignment(Pos.CENTER);
+	    hBoxBot.setSpacing(20);
+	    
+	    
+	  
+	    
+	    
+	    
+	   
 		
 		
 		
