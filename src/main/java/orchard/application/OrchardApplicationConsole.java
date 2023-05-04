@@ -10,7 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
@@ -78,7 +80,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	         root.getRowConstraints().add(row);
 	     }
 		
-		File file = new File("C:\\Users\\iut\\javabut1\\image\\tree_img.png");
+		File file = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
 		Image imgTree = new Image(new FileInputStream(file));
 		
 		
@@ -100,6 +102,15 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    imageView4.setFitWidth(300); 
 		
 	    root.add(imageView1, 0, 0);
+	    VBox vBox = new VBox();
+	    root.add(vBox, 0, 0);
+	    HBox hBoxTop = new HBox();
+	    HBox hBoxMid = new HBox();
+	    HBox hBoxBot = new HBox();
+	    
+	    
+	    
+	    
 	    root.add(imageView2, 2, 0);
 		root.add(imageView3, 0, 2);		
 		root.add(imageView4, 2, 2);	
@@ -115,10 +126,11 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		primaryStage.setTitle("Orchard");
 		primaryStage.setScene(scene);
-		File file_ico = new File("C:\\Users\\iut\\javabut1\\image\\raven_ico.jpg");
+		File file_ico = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\raven_ico.jpg");
 		primaryStage.getIcons().add(new Image(new FileInputStream(file_ico)));
 		primaryStage.show();
 	}
+	
 	
 
 
