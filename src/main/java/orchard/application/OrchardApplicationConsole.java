@@ -1,5 +1,6 @@
 package orchard.application;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,12 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -74,6 +78,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	}
 	
 	public void start(Stage primaryStage) throws FileNotFoundException{
+		
+		Dice dice = new Dice();
+		
 		GridPane root = new GridPane();
 		for (int i = 0 ; i < 3 ; i ++) {
 			ColumnConstraints column = new ColumnConstraints(300);
@@ -90,16 +97,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		RowConstraints row = new RowConstraints(100);
         root.getRowConstraints().add(row);
         
-        Button buttonRoll = new Button("Roll");
-        buttonRoll.setPrefHeight(60);
-        buttonRoll.setPrefWidth(106);
+ 
         
         
-        HBox hBoxButton = new HBox();
-        root.add(hBoxButton, 1, 3);
-       
-        hBoxButton.setAlignment(Pos.CENTER);
-        hBoxButton.getChildren().add(buttonRoll);
         
         
         
@@ -150,6 +150,29 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    setFruitStructure(vBoxBotLeft, listPlumImg);
 	    setFruitStructure(vBoxBotRight, listCherryImg);
 	    
+	    
+	    Button buttonRoll = new Button("Roll");
+        buttonRoll.setPrefHeight(60);
+        buttonRoll.setPrefWidth(106);
+        HBox hBoxButton = new HBox();
+        root.add(hBoxButton, 1, 3);     
+        
+        Label labelColor = new Label("");
+        root.add(labelColor, 1, 3);
+         
+        hBoxButton.setAlignment(Pos.CENTER);
+        hBoxButton.getChildren().add(buttonRoll);
+        
+        buttonRoll.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+    
+        	@Override
+        	public void handle(MouseEvent event) {
+        		labelColor.setText("");
+        		labelColor.setText(dice.roll().toString());
+        		
+        	}
+        });
+	    
 	    	
 
 		
@@ -164,6 +187,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		primaryStage.getIcons().add(new Image(new FileInputStream(file_ico)));
 		primaryStage.show();
 	}
+	
+	
 	
 	
 	public ImageView imageCreation(String imagePath, int height, int width) throws FileNotFoundException{
