@@ -26,6 +26,8 @@ public class Tree {
 		return this.fruitNb;
 	}
 	
+
+	
 	public String getFruitName() {
 		return this.fruitName;
 	}

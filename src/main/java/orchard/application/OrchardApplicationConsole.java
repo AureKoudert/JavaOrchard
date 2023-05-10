@@ -81,6 +81,17 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		Dice dice = new Dice();
 		
+		ArrayList<Tree> treeList = new ArrayList<Tree>();
+		
+		treeList.add(new Tree("appleTree","green","apple",10));
+		treeList.add(new Tree("cherryTree","red","cherry",10));
+		treeList.add(new Tree("pearTree","yellow","pear",10));
+		treeList.add(new Tree("plumTree","plum","plum",10));
+		
+		
+		
+		
+		
 		GridPane root = new GridPane();
 		for (int i = 0 ; i < 3 ; i ++) {
 			ColumnConstraints column = new ColumnConstraints(300);
@@ -120,6 +131,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 			listPlumImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\Plum_img.png", 38, 38));
 			listCherryImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\cherry_img.png", 35, 35));
 		}
+		
+		
 		
 
 	    root.add(imageView1, 0, 0);
@@ -168,7 +181,35 @@ public class OrchardApplicationConsole extends javafx.application.Application{
         	@Override
         	public void handle(MouseEvent event) {
         		labelColor.setText("");
-        		labelColor.setText(dice.roll().toString());
+        		Side side = dice.roll();
+        		labelColor.setText(side.toString());
+        		
+        		if  (side == Side.GREEN) {
+        			if (treeList.get(0).getFruitNb() != 0) {
+        				listAppleImg.get(treeList.get(0).getFruitNb()-1).setVisible(false);
+        				treeList.get(0).removeFruit();
+        			}
+        		}
+        		else if (side == Side.BLUE) {
+        			if (treeList.get(3).getFruitNb() != 0) {
+        				listPlumImg.get(treeList.get(3).getFruitNb()-1).setVisible(false);
+        				treeList.get(3).removeFruit();
+        			}	
+        		}
+        			
+        		else if (side == Side.RED) {
+        			if (treeList.get(1).getFruitNb() != 0) {
+        				listCherryImg.get(treeList.get(1).getFruitNb()-1).setVisible(false);
+        				treeList.get(1).removeFruit();
+        			}
+        		}
+        			
+        		else 
+        			if (treeList.get(2).getFruitNb() != 0) {
+        				listPearImg.get(treeList.get(2).getFruitNb()-1).setVisible(false);
+        				treeList.get(2).removeFruit();
+        			};
+        		
         		
         	}
         });
