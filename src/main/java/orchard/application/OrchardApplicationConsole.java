@@ -3,6 +3,8 @@ package orchard.application;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -85,20 +87,21 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		File fileTree = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
 		Image imgTree = new Image(new FileInputStream(fileTree));
 		
-	
-		ImageView imageViewAppleTop1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleTop2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleTop3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		List<ImageView> listAppleImg = new ArrayList<>();
+		List<ImageView> listPearImg = new ArrayList<>();
+		List<ImageView> listPlumImg = new ArrayList<>();
+		List<ImageView> listCherryImg = new ArrayList<>();
 		
-		ImageView imageViewAppleMid1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleMid2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleMid3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleMid4 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
+		for (int i = 0 ; i < 10 ; i ++) {
+			listAppleImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35));
+			listPearImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\pear_img.png", 35, 25));
+			listPlumImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\Plum_img.png", 38, 38));
+			listCherryImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\cherry_img.png", 35, 35));
+		}
 		
-		ImageView imageViewAppleBot1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleBot2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-		ImageView imageViewAppleBot3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35);
-
+		
+		
+		
 		
 		
 		
@@ -125,49 +128,30 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		root.add(imageView4, 2, 2);	
 		
 	    
-	    VBox vBox = new VBox();
-	    vBox.setAlignment(Pos.CENTER);
-	    root.add(vBox, 0, 0);
+	    VBox vBoxTopLeft = new VBox();
+	    vBoxTopLeft.setAlignment(Pos.CENTER);
+	    root.add(vBoxTopLeft, 0, 0);
+	    
+	    VBox vBoxTopRight = new VBox();
+	    vBoxTopRight.setAlignment(Pos.CENTER);
+	    root.add(vBoxTopRight, 2, 0);
+	    
+	    VBox vBoxBotLeft = new VBox();
+	    vBoxBotLeft.setAlignment(Pos.CENTER);
+	    root.add(vBoxBotLeft, 0, 2);
+	    
+	    VBox vBoxBotRight = new VBox();
+	    vBoxBotRight.setAlignment(Pos.CENTER);
+	    root.add(vBoxBotRight, 2, 2);
 	   
 	    
-	    HBox hBoxTop = new HBox(3);
-	    HBox hBoxMid = new HBox(4);
-	    HBox hBoxBot = new HBox(3);
+	    setFruitStructure(vBoxTopLeft, listAppleImg);
+	    setFruitStructure(vBoxTopRight, listPearImg);
+	    setFruitStructure(vBoxBotLeft, listPlumImg);
+	    setFruitStructure(vBoxBotRight, listCherryImg);
 	    
-	    hBoxTop.setPrefHeight(10);
-	    hBoxTop.setPrefWidth(10);
-	    vBox.getChildren().add(hBoxTop);
+	    	
 	    
-	    hBoxMid.setPrefHeight(10);
-	    hBoxMid.setPrefWidth(10);
-	    vBox.getChildren().add(hBoxMid);
-	    
-	    hBoxBot.setPrefHeight(10);
-	    hBoxBot.setPrefWidth(10);
-	    vBox.getChildren().add(hBoxBot);
-	    
-	    vBox.setSpacing(10);
-	    vBox.setPadding(new Insets(0, 0, 40, 0));
-	    
-	    
-	    hBoxTop.getChildren().add(imageViewAppleTop1);
-	    hBoxTop.getChildren().add(imageViewAppleTop2);
-	    hBoxTop.getChildren().add(imageViewAppleTop3);
-	    hBoxTop.setAlignment(Pos.CENTER);
-	    hBoxTop.setSpacing(30);
-	    
-	    hBoxMid.getChildren().add(imageViewAppleMid1);
-	    hBoxMid.getChildren().add(imageViewAppleMid2);
-	    hBoxMid.getChildren().add(imageViewAppleMid3);
-	    hBoxMid.getChildren().add(imageViewAppleMid4);
-	    hBoxMid.setAlignment(Pos.CENTER);
-	    hBoxMid.setSpacing(20);
-	    
-	    hBoxBot.getChildren().add(imageViewAppleBot1);
-	    hBoxBot.getChildren().add(imageViewAppleBot2);
-	    hBoxBot.getChildren().add(imageViewAppleBot3);
-	    hBoxBot.setAlignment(Pos.CENTER);
-	    hBoxBot.setSpacing(20);
 	    
 	    
 	  
@@ -201,6 +185,48 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		imgView.setFitWidth(width);
 		return imgView;
 	}
+	
+	public void setFruitStructure(VBox vBox, List<ImageView> listFruitImg) {
+			HBox hBoxTop = new HBox(3);
+		    HBox hBoxMid = new HBox(4);
+		    HBox hBoxBot = new HBox(3);
+		    
+		    hBoxTop.setPrefHeight(10);
+		    hBoxTop.setPrefWidth(10);
+		    vBox.getChildren().add(hBoxTop);
+		    
+		    hBoxMid.setPrefHeight(10);
+		    hBoxMid.setPrefWidth(10);
+		    vBox.getChildren().add(hBoxMid);
+		    
+		    hBoxBot.setPrefHeight(10);
+		    hBoxBot.setPrefWidth(10);
+		    vBox.getChildren().add(hBoxBot);
+		    
+		    vBox.setSpacing(10);
+		    vBox.setPadding(new Insets(0, 0, 40, 0));
+		 	hBoxTop.getChildren().add(listFruitImg.get(0));
+		    hBoxTop.getChildren().add(listFruitImg.get(1));
+		    hBoxTop.getChildren().add(listFruitImg.get(2));
+		    hBoxTop.setAlignment(Pos.CENTER);
+		    hBoxTop.setSpacing(30);
+		    
+		    hBoxMid.getChildren().add(listFruitImg.get(3));
+		    hBoxMid.getChildren().add(listFruitImg.get(4));
+		    hBoxMid.getChildren().add(listFruitImg.get(5));
+		    hBoxMid.getChildren().add(listFruitImg.get(6));
+		    hBoxMid.setAlignment(Pos.CENTER);
+		    hBoxMid.setSpacing(20);
+		    
+		    hBoxBot.getChildren().add(listFruitImg.get(7));
+		    hBoxBot.getChildren().add(listFruitImg.get(8));
+		    hBoxBot.getChildren().add(listFruitImg.get(9));
+		    hBoxBot.setAlignment(Pos.CENTER);
+		    hBoxBot.setSpacing(20);
+	}
+	
+	
+	
 
 }
 
