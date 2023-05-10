@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
@@ -74,19 +75,40 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	
 	public void start(Stage primaryStage) throws FileNotFoundException{
 		GridPane root = new GridPane();
-		for (int i = 0 ; i < 5 ; i ++) {
+		for (int i = 0 ; i < 3 ; i ++) {
 			ColumnConstraints column = new ColumnConstraints(300);
 	         root.getColumnConstraints().add(column);
 	     }
 		
-		for (int i = 0 ; i < 5 ; i ++) {
+		
+		
+		for (int i = 0 ; i < 3 ; i ++) {
 			RowConstraints row = new RowConstraints(300);
 	         root.getRowConstraints().add(row);
 	     }
 		
-		File fileTree = new File("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png");
-		Image imgTree = new Image(new FileInputStream(fileTree));
-		
+		RowConstraints row = new RowConstraints(100);
+        root.getRowConstraints().add(row);
+        
+        Button buttonRoll = new Button("Roll");
+        buttonRoll.setPrefHeight(60);
+        buttonRoll.setPrefWidth(106);
+        
+        
+        HBox hBoxButton = new HBox();
+        root.add(hBoxButton, 1, 3);
+       
+        hBoxButton.setAlignment(Pos.CENTER);
+        hBoxButton.getChildren().add(buttonRoll);
+        
+        
+        
+        
+		ImageView imageView1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
+		ImageView imageView2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
+		ImageView imageView3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
+		ImageView imageView4 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
+
 		List<ImageView> listAppleImg = new ArrayList<>();
 		List<ImageView> listPearImg = new ArrayList<>();
 		List<ImageView> listPlumImg = new ArrayList<>();
@@ -99,29 +121,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 			listCherryImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\cherry_img.png", 35, 35));
 		}
 		
-		
-		
-		
-		
-		
-		
-		ImageView imageView1 = new ImageView(imgTree);
-		ImageView imageView2 = new ImageView(imgTree);
-		ImageView imageView3 = new ImageView(imgTree);
-		ImageView imageView4 = new ImageView(imgTree);
-		
-		imageView1.setFitHeight(300); 
-	    imageView1.setFitWidth(300); 
-	    
-	    imageView2.setFitHeight(300); 
-	    imageView2.setFitWidth(300); 
-	    
-	    imageView3.setFitHeight(300); 
-	    imageView3.setFitWidth(300); 
-	    
-	    imageView4.setFitHeight(300); 
-	    imageView4.setFitWidth(300); 
-		
+
 	    root.add(imageView1, 0, 0);
 	    root.add(imageView2, 2, 0);
 		root.add(imageView3, 0, 2);		
@@ -151,21 +151,10 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    setFruitStructure(vBoxBotRight, listCherryImg);
 	    
 	    	
-	    
-	    
-	    
-	  
-	    
-	    
-	    
-	   
+
 		
 		
-		
-		
-		
-		
-		Scene scene = new Scene(root, 900, 900);
+		Scene scene = new Scene(root, 900, 1000);
 		
 		
 		

@@ -34,4 +34,9 @@ public class Dice {
 		 nb = borneInf+random.nextInt(borneSup-borneInf);
 		 return nb;
 		}
+	
+	
+	public void dicePrint() {
+		
+	}
 }
