@@ -1,6 +1,7 @@
 package orchard.application;
 
 
+import java.awt.Font;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,11 +18,15 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
@@ -118,11 +123,6 @@ public class OrchardApplicationConsole extends javafx.application.Application{
         
  
         
-        
-        
-        
-        
-        
 		ImageView imageView1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
 		ImageView imageView2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
 		ImageView imageView3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\tree_img.png", 300, 300);
@@ -140,6 +140,12 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 			listCherryImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\cherry_img.png", 35, 35));
 		}
 		
+		ImageView imageViewBasket1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+		ImageView imageViewBasket2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+		ImageView imageViewBasket3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+		ImageView imageViewBasket4 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+		
+		
 		
 		
 
@@ -147,6 +153,53 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    root.add(imageView2, 2, 0);
 		root.add(imageView3, 0, 2);		
 		root.add(imageView4, 2, 2);	
+		
+		/*HBox hBoxBasketTop = new HBox();
+		root.add(hBoxBasketTop, 1, 0);
+		hBoxBasketTop.getChildren().add(imageViewBasket1);
+		hBoxBasketTop.setAlignment(Pos.CENTER);
+		VBox vBoxBasketTop = new VBox();
+		hBoxBasketTop.getChildren().add(vBoxBasketTop);
+		vBoxBasketTop.getChildren().add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35));
+		
+		
+		
+		HBox hBoxBasketLeft = new HBox();
+		root.add(hBoxBasketLeft, 0, 1);
+		hBoxBasketLeft.getChildren().add(imageViewBasket2);
+		hBoxBasketLeft.setAlignment(Pos.CENTER);
+		
+		HBox hBoxBasketRight = new HBox();
+		root.add(hBoxBasketRight, 2, 1);
+		hBoxBasketRight.getChildren().add(imageViewBasket3);
+		hBoxBasketRight.setAlignment(Pos.CENTER);
+		
+		
+		HBox hBoxBasketBot = new HBox();
+		root.add(hBoxBasketBot, 1, 2);
+		hBoxBasketBot.getChildren().add(imageViewBasket4);
+		hBoxBasketBot.setAlignment(Pos.CENTER);*/
+		
+		root.add(imageViewBasket1, 1, 0);
+		VBox vBoxBasketTop = new VBox();
+		root.add(vBoxBasketTop, 1, 0);
+		vBoxBasketTop.setAlignment(Pos.CENTER);
+		//vBoxBasketTop.getChildren().add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 60, 60));
+		Label labelBasketTop = new Label("Apple : 0");
+		labelBasketTop.setBackground(new Background(new BackgroundFill(Color.rgb(33, 217, 0, 1), new CornerRadii(15.5), Insets.EMPTY)));
+		labelBasketTop.setPrefWidth(75);
+		labelBasketTop.setAlignment(Pos.CENTER);
+		labelBasketTop.setStyle("-fx-font-weight: bold");
+		vBoxBasketTop.getChildren().add(labelBasketTop);
+		
+		
+		
+		
+		
+		root.add(imageViewBasket2, 0, 1);
+		root.add(imageViewBasket3, 2, 1);
+		root.add(imageViewBasket4, 1, 2);
+
 		
 	    
 	    VBox vBoxTopLeft = new VBox();
