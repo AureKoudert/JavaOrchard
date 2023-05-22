@@ -153,10 +153,16 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 	
 		// ajout des paniers
-		basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
-		basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
-		basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
-		basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
+		Label labelApple = new Label();
+		labelApple = basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
+		Label labelPear = new Label();
+		labelPear = basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
+		Label labelCherry = new Label();
+		labelCherry = basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
+		Label labelPlum = new Label();
+		labelPlum = basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
+		
+		labelApple.setText("Aurélien mange des pieds");
 		
 
 	    
