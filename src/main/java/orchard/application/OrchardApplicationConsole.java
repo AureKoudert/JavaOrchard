@@ -140,10 +140,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 			listCherryImg.add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\cherry_img.png", 35, 35));
 		}
 		
-		ImageView imageViewBasket1 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
-		ImageView imageViewBasket2 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
-		ImageView imageViewBasket3 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
-		ImageView imageViewBasket4 = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+	
 		
 		
 		
@@ -154,53 +151,14 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		root.add(imageView3, 0, 2);		
 		root.add(imageView4, 2, 2);	
 		
-		/*HBox hBoxBasketTop = new HBox();
-		root.add(hBoxBasketTop, 1, 0);
-		hBoxBasketTop.getChildren().add(imageViewBasket1);
-		hBoxBasketTop.setAlignment(Pos.CENTER);
-		VBox vBoxBasketTop = new VBox();
-		hBoxBasketTop.getChildren().add(vBoxBasketTop);
-		vBoxBasketTop.getChildren().add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 35, 35));
+	
+		// ajout des paniers
+		basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
+		basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
+		basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
+		basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
 		
-		
-		
-		HBox hBoxBasketLeft = new HBox();
-		root.add(hBoxBasketLeft, 0, 1);
-		hBoxBasketLeft.getChildren().add(imageViewBasket2);
-		hBoxBasketLeft.setAlignment(Pos.CENTER);
-		
-		HBox hBoxBasketRight = new HBox();
-		root.add(hBoxBasketRight, 2, 1);
-		hBoxBasketRight.getChildren().add(imageViewBasket3);
-		hBoxBasketRight.setAlignment(Pos.CENTER);
-		
-		
-		HBox hBoxBasketBot = new HBox();
-		root.add(hBoxBasketBot, 1, 2);
-		hBoxBasketBot.getChildren().add(imageViewBasket4);
-		hBoxBasketBot.setAlignment(Pos.CENTER);*/
-		
-		root.add(imageViewBasket1, 1, 0);
-		VBox vBoxBasketTop = new VBox();
-		root.add(vBoxBasketTop, 1, 0);
-		vBoxBasketTop.setAlignment(Pos.CENTER);
-		//vBoxBasketTop.getChildren().add(imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\apple_img.png", 60, 60));
-		Label labelBasketTop = new Label("Apple : 0");
-		labelBasketTop.setBackground(new Background(new BackgroundFill(Color.rgb(33, 217, 0, 1), new CornerRadii(15.5), Insets.EMPTY)));
-		labelBasketTop.setPrefWidth(75);
-		labelBasketTop.setAlignment(Pos.CENTER);
-		labelBasketTop.setStyle("-fx-font-weight: bold");
-		vBoxBasketTop.getChildren().add(labelBasketTop);
-		
-		
-		
-		
-		
-		root.add(imageViewBasket2, 0, 1);
-		root.add(imageViewBasket3, 2, 1);
-		root.add(imageViewBasket4, 1, 2);
 
-		
 	    
 	    VBox vBoxTopLeft = new VBox();
 	    vBoxTopLeft.setAlignment(Pos.CENTER);
@@ -341,7 +299,22 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		    hBoxBot.setSpacing(20);
 	}
 	
-	
+	public void basketCreation(GridPane gridPane, int posY, int posX, String text, int r, int g, int b) throws FileNotFoundException{
+		ImageView imageViewBasket = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
+		
+		gridPane.add(imageViewBasket, posY, posX);
+		VBox vBoxBasket = new VBox();
+		gridPane.add(vBoxBasket, posY, posX);
+		vBoxBasket.setAlignment(Pos.CENTER);
+		Label labelBasket = new Label(text);
+		labelBasket.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 1), new CornerRadii(150.5), Insets.EMPTY)));
+		labelBasket.setPrefWidth(60);
+		labelBasket.setPrefHeight(60);
+		labelBasket.setAlignment(Pos.CENTER);
+		labelBasket.setStyle("-fx-font-weight: bold");
+		vBoxBasket.getChildren().add(labelBasket);
+		
+	}
 	
 
 }
