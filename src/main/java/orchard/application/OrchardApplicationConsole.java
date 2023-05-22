@@ -86,7 +86,15 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		treeList.add(new Tree("appleTree","green","apple",10));
 		treeList.add(new Tree("cherryTree","red","cherry",10));
 		treeList.add(new Tree("pearTree","yellow","pear",10));
-		treeList.add(new Tree("plumTree","plum","plum",10));
+		treeList.add(new Tree("plumTree","blue","plum",10));
+		
+		
+		ArrayList<Basket> basketList = new ArrayList<Basket>();
+		
+		basketList.add(new Basket(0, "green"));
+		basketList.add(new Basket(0, "red"));
+		basketList.add(new Basket(0, "yellow"));
+		basketList.add(new Basket(0, "blue"));
 		
 		
 		
