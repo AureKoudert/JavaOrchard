@@ -313,8 +313,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		vBoxBasket.setAlignment(Pos.CENTER);
 		Label labelBasket = new Label(text);
 		labelBasket.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 1), new CornerRadii(150.5), Insets.EMPTY)));
-		labelBasket.setPrefWidth(60);
-		labelBasket.setPrefHeight(60);
+		labelBasket.setPrefWidth(65);
+		labelBasket.setPrefHeight(65);
 		labelBasket.setAlignment(Pos.CENTER);
 		labelBasket.setStyle("-fx-font-weight: bold");
 		vBoxBasket.getChildren().add(labelBasket);
