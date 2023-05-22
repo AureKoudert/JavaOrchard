@@ -161,8 +161,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		labelCherry = basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
 		Label labelPlum = new Label();
 		labelPlum = basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
-		
-		labelApple.setText("Aurélien mange des pieds");
+
 		
 
 	    
