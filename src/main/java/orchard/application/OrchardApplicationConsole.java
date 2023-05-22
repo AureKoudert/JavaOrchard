@@ -299,7 +299,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		    hBoxBot.setSpacing(20);
 	}
 	
-	public void basketCreation(GridPane gridPane, int posY, int posX, String text, int r, int g, int b) throws FileNotFoundException{
+	public Label basketCreation(GridPane gridPane, int posY, int posX, String text, int r, int g, int b) throws FileNotFoundException{
 		ImageView imageViewBasket = imageCreation("C:\\Users\\iut\\javabut1\\orchard\\image\\basket_img.png", 200, 300);
 		
 		gridPane.add(imageViewBasket, posY, posX);
@@ -313,6 +313,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		labelBasket.setAlignment(Pos.CENTER);
 		labelBasket.setStyle("-fx-font-weight: bold");
 		vBoxBasket.getChildren().add(labelBasket);
+		return labelBasket;
 		
 	}
 	
