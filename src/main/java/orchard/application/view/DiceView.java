@@ -16,10 +16,10 @@ public class DiceView {
         this.buttonRoll.setPrefWidth(106);
         HBox hBoxButton = new HBox();
         gridPane.add(hBoxButton, 1, 3);                  
-        gridPane.add(this.labelColor, 1, 3);         
+       
         hBoxButton.setAlignment(Pos.CENTER);
-        hBoxButton.getChildren().add(this.buttonRoll);
-        
+        hBoxButton.getChildren().addAll(this.buttonRoll, this.labelColor);
+    
 	}
 
 
@@ -29,7 +29,7 @@ public class DiceView {
 
 
 	public void setLabelColor(String color) {
-		this.labelColor.setText(color);;
+		this.labelColor.setText(color);
 	}
 
 

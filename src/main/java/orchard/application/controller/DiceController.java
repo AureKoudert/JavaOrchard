@@ -12,7 +12,6 @@ import orchard.application.view.TreeView;
 public class DiceController implements EventHandler<MouseEvent>{
 	
 	private Dice dice = new Dice();
-	private Button button;
 	private Game treeList;
 	private TreeView treeView;
 
@@ -20,8 +19,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 	DiceView diceView = new DiceView();
 	
 	
-	public DiceController(Button button, Game treeList, TreeView treeView) {
-		this.button = button;
+	public DiceController( Game treeList, TreeView treeView) {
 		this.treeList = treeList;
 		this.treeView = treeView;
 	
@@ -37,6 +35,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 			if (treeList.getTreeList().get(0).getFruitNb() != 0) {
 				treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
 				treeList.getTreeList().get(0).removeFruit();
+				diceView.setLabelColor("GREEN");
 				
 			}
 		}
@@ -44,6 +43,8 @@ public class DiceController implements EventHandler<MouseEvent>{
 			if (treeList.getTreeList().get(3).getFruitNb() != 0) {
 				treeView.getListPlumImg().get(treeList.getTreeList().get(3).getFruitNb()-1).setVisible(false);
 				treeList.getTreeList().get(3).removeFruit();
+				diceView.setLabelColor("BLUE");
+
 			}	
 		}
 			
@@ -51,6 +52,8 @@ public class DiceController implements EventHandler<MouseEvent>{
 			if (treeList.getTreeList().get(1).getFruitNb() != 0) {
 				treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
 				treeList.getTreeList().get(1).removeFruit();
+				diceView.setLabelColor("RED");
+
 			}
 		}
 			
@@ -58,6 +61,8 @@ public class DiceController implements EventHandler<MouseEvent>{
 			if (treeList.getTreeList().get(2).getFruitNb() != 0) {
 				treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
 				treeList.getTreeList().get(2).removeFruit();
+				diceView.setLabelColor("YELLOW");
+
 			};
 		
 		

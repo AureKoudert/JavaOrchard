@@ -91,7 +91,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		VBox vBoxBotLeft = GameView.vBoxCreation(root, 0, 2);
 		VBox vBoxBotRight = GameView.vBoxCreation(root, 2, 2);
 
-	   
+	    treeView.fruitListCreation();
+
 	    
 	    TreeView.setFruitStructure(vBoxTopLeft, treeView.getListAppleImg());
 	    TreeView.setFruitStructure(vBoxTopRight, treeView.getListPearImg());
@@ -102,9 +103,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    Button buttonRoll = diceView.getButtonRoll();
 	    
 	    game.createTreeList();
-	    treeView.fruitListCreation();
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(buttonRoll, game, treeView));
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController( game, treeView));
 		
 		Scene scene = new Scene(root, 900, 1000);
 		
