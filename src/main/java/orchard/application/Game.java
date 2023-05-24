@@ -2,6 +2,9 @@ package orchard.application;
 
 import java.util.ArrayList;
 
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+
 
 
 public class Game {
@@ -24,6 +27,8 @@ public class Game {
 		this.basketList.add(new Basket(0, "yellow"));
 		this.basketList.add(new Basket(0, "blue"));
 	}
+	
+
 
 	public ArrayList<Tree> getTreeList() {
 		return this.treeList;
@@ -32,6 +37,8 @@ public class Game {
 	public ArrayList<Basket> getBasketList() {
 		return this.basketList;
 	}
+	
+	
 	
 	
 	

@@ -4,6 +4,8 @@ package orchard.application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -68,12 +70,15 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	}
 	
 	public void start(Stage primaryStage){
+		
+		
 	
 		Game game = new Game();
 		
 		GridPane root = GameView.gridPaneCreation();      
 		TreeView treeView = new TreeView();
 		BasketView basketView = new BasketView();
+		GameView gameView = new GameView();
 		
 		
 		DiceView diceView = new DiceView();
@@ -92,6 +97,8 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		VBox vBoxBotRight = GameView.vBoxCreation(root, 2, 2);
 
 	    treeView.fruitListCreation();
+	    
+	    
 
 	    
 	    TreeView.setFruitStructure(vBoxTopLeft, treeView.getListAppleImg());
@@ -104,7 +111,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    
 	    game.createTreeList();
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView));
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView));
+	    
+	    gameView.createLabelRound(root);
 		
 		Scene scene = new Scene(root, 900, 1000);
 		

@@ -1,6 +1,6 @@
 package orchard.application.view;
 
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,7 +12,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import orchard.application.view.GameView;
 
 public class BasketView {
 	
@@ -42,6 +41,8 @@ public class BasketView {
 	
 	public void basketPlacing(GridPane root) {
 		
+		
+		
 		this.labelApple = BasketView.basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
 		this.labelPear = BasketView.basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
 		this.labelCherry = BasketView.basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
@@ -53,32 +54,32 @@ public class BasketView {
 		return labelApple;
 	}
 
-	public void setLabelApple(Label labelApple) {
-		this.labelApple = labelApple;
+	public void setLabelApple(String text) {
+		this.labelApple.setText(text);
 	}
 
 	public Label getLabelPear() {
 		return labelPear;
 	}
 
-	public void setLabelPear(Label labelPear) {
-		this.labelPear = labelPear;
+	public void setLabelPear(String text) {
+		this.labelPear.setText(text);
 	}
 
 	public Label getLabelCherry() {
 		return labelCherry;
 	}
 
-	public void setLabelCherry(Label labelCherry) {
-		this.labelCherry = labelCherry;
+	public void setLabelCherry(String text) {
+		this.labelCherry.setText(text);
 	}
 
 	public Label getLabelPlum() {
 		return labelPlum;
 	}
 
-	public void setLabelPlum(Label labelPlum) {
-		this.labelPlum = labelPlum;
+	public void setLabelPlum(String text) {
+		this.labelPlum.setText(text);
 	}
 
 
