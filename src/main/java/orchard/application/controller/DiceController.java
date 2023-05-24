@@ -56,8 +56,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 				if (treeList.getTreeList().get(3).getFruitNb() != 0) {
 					treeView.getListPlumImg().get(treeList.getTreeList().get(3).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(3).removeFruit();
-					basketView.setLabelPlum("Plum :"+ (10 - treeList.getTreeList().get(3).getFruitNb()));
-					
+					basketView.setLabelPlum("Plum :"+ (10 - treeList.getTreeList().get(3).getFruitNb()));		
 	
 				}	
 			}
