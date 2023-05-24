@@ -104,7 +104,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    
 	    game.createTreeList();
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController( game, treeView));
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView));
 		
 		Scene scene = new Scene(root, 900, 1000);
 		

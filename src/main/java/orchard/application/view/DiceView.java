@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 public class DiceView {
-	private Label labelColor = new Label();
+	private Label labelColor = new Label("");
 	private Button buttonRoll = new Button("Roll");
 	
 	
@@ -15,10 +15,11 @@ public class DiceView {
         this.buttonRoll.setPrefHeight(60);
         this.buttonRoll.setPrefWidth(106);
         HBox hBoxButton = new HBox();
-        gridPane.add(hBoxButton, 1, 3);                  
+        gridPane.add(hBoxButton, 1, 3);   
+        gridPane.add(labelColor, 1, 3);
        
         hBoxButton.setAlignment(Pos.CENTER);
-        hBoxButton.getChildren().addAll(this.buttonRoll, this.labelColor);
+        hBoxButton.getChildren().add(this.buttonRoll);
     
 	}
 
@@ -29,7 +30,7 @@ public class DiceView {
 
 
 	public void setLabelColor(String color) {
-		this.labelColor.setText(color);
+		labelColor.setText(color);
 	}
 
 
