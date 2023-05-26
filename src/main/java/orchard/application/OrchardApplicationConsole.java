@@ -4,9 +4,13 @@ package orchard.application;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -115,9 +119,16 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    
 	    gameView.createLabelRound(root);
 		
-		Scene scene = new Scene(root, 900, 1000);
+	    
 		
-		
+	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));
+	    
+	    Background background = new Background(backgroundImage);
+	    
+	    
+	    root.setBackground(background);
+	    
+	    Scene scene = new Scene(root, 900, 1000);
 		
 		primaryStage.setTitle("Orchard");
 		primaryStage.setScene(scene);

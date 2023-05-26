@@ -46,9 +46,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 				if (treeList.getTreeList().get(0).getFruitNb() != 0) {
 					treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(0).removeFruit();
-					basketView.setLabelApple("Apple :"+ (10 - treeList.getTreeList().get(0).getFruitNb()));
-					
-					
+					basketView.setLabelApple("Apple :"+ (10 - treeList.getTreeList().get(0).getFruitNb()));	
 					
 				}
 			}
@@ -65,8 +63,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 				if (treeList.getTreeList().get(1).getFruitNb() != 0) {
 					treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(1).removeFruit();
-					basketView.setLabelCherry("Cherry :"+ (10 - treeList.getTreeList().get(1).getFruitNb()));
-					
+					basketView.setLabelCherry("Cherry :"+ (10 - treeList.getTreeList().get(1).getFruitNb()));		
 	
 				}
 			}
@@ -75,8 +72,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 				if (treeList.getTreeList().get(2).getFruitNb() != 0) {
 					treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(2).removeFruit();
-					basketView.setLabelPear("Pear :"+ (10 - treeList.getTreeList().get(2).getFruitNb()));
-					
+					basketView.setLabelPear("Pear :"+ (10 - treeList.getTreeList().get(2).getFruitNb()));				
 	
 				};
 		}
