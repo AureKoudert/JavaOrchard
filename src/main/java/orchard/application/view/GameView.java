@@ -13,8 +13,7 @@ import javafx.scene.layout.VBox;
 
 public class GameView {
 	
-	Label labelRound = new Label("Round : 0");
-	int counter = 0;
+
 	
 	public static GridPane gridPaneCreation() {
 		GridPane root = new GridPane();
@@ -61,12 +60,4 @@ public class GameView {
 		return imgView;
 	}
 	
-	public void createLabelRound(GridPane gridPane) {
-		gridPane.add(labelRound, 2, 3);	
-	}
-	
-	public void incrementLabelRound() {
-		counter += 1;
-		labelRound.setText("Round : "+counter);
-	}
 }

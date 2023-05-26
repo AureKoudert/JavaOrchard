@@ -15,7 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import orchard.application.controller.DiceController;
-import orchard.application.view.BasketView;
+import orchard.application.view.UIView;
 import orchard.application.view.DiceView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
@@ -81,7 +81,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		GridPane root = GameView.gridPaneCreation();      
 		TreeView treeView = new TreeView();
-		BasketView basketView = new BasketView();
+		UIView basketView = new UIView();
 		GameView gameView = new GameView();
 		
 		
@@ -117,8 +117,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    
 	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView));
 	    
-	    gameView.createLabelRound(root);
-		
+	   		
 	    
 		
 	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));

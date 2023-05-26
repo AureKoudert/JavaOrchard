@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class BasketView {
+public class UIView {
 	
 	private Label labelApple = new Label();
 	private Label labelPear = new Label();
@@ -43,10 +43,10 @@ public class BasketView {
 		
 		
 		
-		this.labelApple = BasketView.basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
-		this.labelPear = BasketView.basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
-		this.labelCherry = BasketView.basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
-		this.labelPlum = BasketView.basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
+		this.labelApple = UIView.basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
+		this.labelPear = UIView.basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
+		this.labelCherry = UIView.basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
+		this.labelPlum = UIView.basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
 
 	}
 	
