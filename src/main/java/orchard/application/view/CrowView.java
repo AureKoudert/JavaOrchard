@@ -26,15 +26,15 @@ public class CrowView {
 		gridPanePuzzle.add(one, 0, 0);
 		
 		ImageView two = GameView.imageCreation("crow_shadow/01.png", 100, 100);
-		gridPanePuzzle.add(two, 1, 0);
+		gridPanePuzzle.add(two, 0, 1);
 
 		
 		ImageView three = GameView.imageCreation("crow_shadow/02.png", 100, 100);
-		gridPanePuzzle.add(three, 2, 0);
+		gridPanePuzzle.add(three, 0, 2);
 
 		
 		ImageView four = GameView.imageCreation("crow_shadow/10.png", 100, 100);
-		gridPanePuzzle.add(four, 0, 1);
+		gridPanePuzzle.add(four, 1, 0);
 
 		
 		ImageView five = GameView.imageCreation("crow_shadow/11.png", 100, 100);
@@ -42,15 +42,15 @@ public class CrowView {
 
 		
 		ImageView six = GameView.imageCreation("crow_shadow/12.png", 100, 100);
-		gridPanePuzzle.add(six, 2, 1);
+		gridPanePuzzle.add(six, 1, 2);
 
 		
 		ImageView seven = GameView.imageCreation("crow_shadow/20.png", 100, 100);
-		gridPanePuzzle.add(seven, 0, 2);
+		gridPanePuzzle.add(seven, 2, 0);
 
 		
 		ImageView eight = GameView.imageCreation("crow_shadow/21.png", 100, 100);
-		gridPanePuzzle.add(eight, 1, 2);
+		gridPanePuzzle.add(eight, 2, 1);
 
 		
 		ImageView nine = GameView.imageCreation("crow_shadow/22.png", 100, 100);
