@@ -71,7 +71,6 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    game.createTreeList();
 	    GridPane crowPuzzle = CrowView.crowPuzzleCreation(root);
 	    
-	    Crow crow = new Crow(primaryStage);
 	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView, crowPuzzle, primaryStage));
 	   		
 	    
@@ -91,6 +90,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		primaryStage.setTitle("Orchard");
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
 		
 		
 		

@@ -25,8 +25,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 	private GridPane gridPane;
 	private Stage stage;
 
-	
-	Crow crow = new Crow(stage);
+	Crow crow = new Crow();
 	
 
 	
@@ -91,7 +90,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 			else {
 				
 				diceView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
-				crow.placingCrow(gridPane);
+				crow.placingCrow(gridPane, stage);
 			}
 		
 	}

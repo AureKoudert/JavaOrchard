@@ -8,14 +8,14 @@ import javafx.stage.Stage;
 public class GameEndView {
 	
 	public static void gameLose(Stage previousStage) {
-		
 		BorderPane borderPane = new BorderPane();
 		
 		Label label = new Label("Number Two Defeat Royale");
+		label.setPrefWidth(75);
+		borderPane.getChildren().add(label);
 		
 		previousStage.hide();
 		
-		borderPane.getChildren().add(label);
 		
 		Scene loseScene = new Scene(borderPane);
 		
@@ -30,10 +30,12 @@ public class GameEndView {
 		BorderPane borderPane = new BorderPane();
 		
 		Label label = new Label("Number One Victory Royale");
+		label.setPrefWidth(75);
+		borderPane.getChildren().add(label);
 		
 		previousStage.hide();
 		
-		borderPane.getChildren().add(label);
+		
 		
 		Scene winScene = new Scene(borderPane);
 		

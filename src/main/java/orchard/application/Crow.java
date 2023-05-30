@@ -9,19 +9,13 @@ import orchard.application.view.GameView;
 
 public class Crow {
 	
-	private Stage stage;
 	
-	public Crow(Stage stage) {
-		this.stage = stage;
-	}
 	
 	public static boolean listCrowPieces[] = { false, false, false, false, false, false, false, false, false};
 	
 	
 	
-	public void placingCrow(GridPane gridPane) {
-		
-		
+	public void placingCrow(GridPane gridPane, Stage stage) {
 		
 		int piece = Dice.generateInt(0, 9);
 		
@@ -73,7 +67,7 @@ public class Crow {
 			
 			if (listCrowPieces[0] == true && listCrowPieces[1] == true && listCrowPieces[2] == true && listCrowPieces[3] == true && listCrowPieces[4] == true && listCrowPieces[5] == true && listCrowPieces[6] == true && listCrowPieces[7] == true && listCrowPieces[8] == true) {
 				System.out.println("fin");
-				GameEndView.gameLose(this.stage);
+				GameEndView.gameLose(stage);
 			}
 			
 		}
