@@ -14,12 +14,16 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import orchard.application.controller.AppleController;
+import orchard.application.controller.CherryController;
 import orchard.application.controller.DiceController;
+import orchard.application.controller.PearController;
+import orchard.application.controller.PlumController;
+import orchard.application.view.BasketView;
 import orchard.application.view.CrowView;
-import orchard.application.view.UIView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
-import orchard.application.view.BasketView;
+import orchard.application.view.UIView;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
 	
@@ -37,7 +41,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		TreeView treeView = new TreeView();
 		BasketView basketView = new BasketView();
 		GameView gameView = new GameView();
-		UIView diceView = new UIView();
+		UIView uiView = new UIView();
 		
 		
 		
@@ -63,14 +67,18 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    TreeView.setFruitStructure(vBoxBotLeft, treeView.getListPlumImg());
 	    TreeView.setFruitStructure(vBoxBotRight, treeView.getListCherryImg());
 	    
-	    diceView.placingRollButton(root);
-	    Button buttonRoll = diceView.getButtonRoll();
+	    uiView.placingRollButton(root);
+	    Button buttonRoll = uiView.getButtonRoll();
 	    
 	    game.createTreeList();
 	    GridPane crowPuzzle = CrowView.crowPuzzleCreation(root);
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView, crowPuzzle, primaryStage, root));
-	   		
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, uiView, basketView, gameView, crowPuzzle, primaryStage, root));
+	   	
+	    uiView.getListFruitImg().get(0).addEventFilter(MouseEvent.MOUSE_PRESSED, new AppleController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(1).addEventFilter(MouseEvent.MOUSE_PRESSED, new PearController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(2).addEventFilter(MouseEvent.MOUSE_PRESSED, new PlumController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(3).addEventFilter(MouseEvent.MOUSE_PRESSED, new CherryController(game, treeView, basketView));
 	    
 		
 	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.jpg"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));

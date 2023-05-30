@@ -21,10 +21,10 @@ public class PlumController implements EventHandler<MouseEvent>{
 	
 	@Override
 	public void handle(MouseEvent event) {
-		if (treeList.getTreeList().get(2).getFruitNb() != 0) {
-			treeView.getListPlumImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
-			treeList.getTreeList().get(2).removeFruit();
-			basketView.setLabelPlum("Plum : "+ (10 - treeList.getTreeList().get(2).getFruitNb()));						
+		if (treeList.getTreeList().get(3).getFruitNb() != 0) {
+			treeView.getListPlumImg().get(treeList.getTreeList().get(3).getFruitNb()-1).setVisible(false);
+			treeList.getTreeList().get(3).removeFruit();
+			basketView.setLabelPlum("Plum : "+ (10 - treeList.getTreeList().get(3).getFruitNb()));						
 		}
 		
 	}

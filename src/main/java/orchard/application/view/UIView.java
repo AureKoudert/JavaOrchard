@@ -30,6 +30,10 @@ public class UIView {
 	
 	
 	
+	public List<ImageView> getListFruitImg() {
+		return listFruitImg;
+	}
+
 	public void placingRollButton(GridPane gridPane) {
 		
 		setFruit(gridPane);
@@ -97,7 +101,7 @@ public class UIView {
 		return buttonRoll;
 	}
 	
-	public List<ImageView> setFruit(GridPane gridPane) {
+	public void setFruit(GridPane gridPane) {
 		HBox hBox = new HBox();
 		gridPane.add(hBox, 2, 3);
 		ImageView apple = GameView.imageCreation("apple_img.png", 50, 50);
@@ -120,7 +124,7 @@ public class UIView {
 		listFruitImg.add(plum);
 		listFruitImg.add(cherry);
 		
-		return listFruitImg;
+		
 	}
 	
 	public void setFruitVisible(GridPane gridPane, Game treeList) {

@@ -21,10 +21,10 @@ public class PearController implements EventHandler<MouseEvent>{
 	
 	@Override
 	public void handle(MouseEvent event) {
-		if (treeList.getTreeList().get(1).getFruitNb() != 0) {
-			treeView.getListPearImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
-			treeList.getTreeList().get(1).removeFruit();
-			basketView.setLabelPear("Pear : "+ (10 - treeList.getTreeList().get(1).getFruitNb()));						
+		if (treeList.getTreeList().get(2).getFruitNb() != 0) {
+			treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
+			treeList.getTreeList().get(2).removeFruit();
+			basketView.setLabelPear("Pear : "+ (10 - treeList.getTreeList().get(2).getFruitNb()));						
 		}
 		
 	}
