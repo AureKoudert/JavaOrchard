@@ -47,7 +47,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(0).removeFruit();
 					basketView.setLabelApple("Apple : "+ (10 - treeList.getTreeList().get(0).getFruitNb()));	
-					diceView.setLabelColor(side.toString(), 33, 217, 0);
+					diceView.setLabelColor(side.toString(), 33, 217, 0, 0, 0, 0);
 					
 					
 				}
@@ -57,7 +57,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListPlumImg().get(treeList.getTreeList().get(3).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(3).removeFruit();
 					basketView.setLabelPlum("Plum : "+ (10 - treeList.getTreeList().get(3).getFruitNb()));
-					diceView.setLabelColor(side.toString(), 93, 0, 255);
+					diceView.setLabelColor(side.toString(), 93, 0, 255, 0, 0, 0);
 				}	
 			}
 				
@@ -66,20 +66,25 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(1).removeFruit();
 					basketView.setLabelCherry("Cherry : "+ (10 - treeList.getTreeList().get(1).getFruitNb()));	
-					diceView.setLabelColor(side.toString(), 180, 18, 4);
+					diceView.setLabelColor(side.toString(), 180, 18, 4, 0, 0, 0);
 				}
 			}
 				
-			else 
+			else if (side == side.YELLOW) {
 				if (treeList.getTreeList().get(2).getFruitNb() != 0) {
 					treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(2).removeFruit();
 					basketView.setLabelPear("Pear : "+ (10 - treeList.getTreeList().get(2).getFruitNb()));			
-					diceView.setLabelColor(side.toString(), 255, 230, 0);
-					
-				};
-		}
+					diceView.setLabelColor(side.toString(), 255, 230, 0, 0, 0, 0);
+				
+				}
+			}
+			else {
+				
+				diceView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
+			}
 		
 	}
 
+	}
 }

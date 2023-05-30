@@ -47,12 +47,15 @@ public class DiceView {
 	}
 
 
-	public void setLabelColor(String color, int r, int g, int b) {
+	public void setLabelColor(String color, int r, int g, int b, int r2, int g2, int b2) {
 		labelColor.setText(color);
+		labelColor.setTextFill(Color.rgb(r2, g2, b2));
 		labelColor.setStyle("-fx-font-weight: bold");
 		labelColor.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 0.80),  new CornerRadii(5.0), Insets.EMPTY)));
 
 	}
+	
+	
 	
 	public void setLabelBorder() {
 		//labelColor.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 1), new CornerRadii(150.5), Insets.EMPTY)));
