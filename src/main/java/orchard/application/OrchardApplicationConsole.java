@@ -120,7 +120,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	   		
 	    
 		
-	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));
+	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.jpg"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));
 	    
 	    Background background = new Background(backgroundImage);
 	    
