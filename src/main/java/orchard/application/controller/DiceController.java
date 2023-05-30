@@ -3,11 +3,13 @@ package orchard.application.controller;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import orchard.application.Crow;
 import orchard.application.Dice;
 import orchard.application.Game;
 import orchard.application.Side;
 import orchard.application.view.DiceView;
+import orchard.application.view.GameEndView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
 import orchard.application.view.UIView;
@@ -21,25 +23,29 @@ public class DiceController implements EventHandler<MouseEvent>{
 	private UIView basketView;
 	private GameView gameView;
 	private GridPane gridPane;
+	private Stage stage;
 
 	
+	Crow crow = new Crow(stage);
+	
 
 	
 	
-	public DiceController( Game treeList, TreeView treeView, DiceView diceView, UIView basketView, GameView gameView, GridPane gridPane) {
+	public DiceController( Game treeList, TreeView treeView, DiceView diceView, UIView basketView, GameView gameView, GridPane gridPane, Stage stage) {
 		this.treeList = treeList;
 		this.treeView = treeView;
 		this.diceView = diceView;
 		this.basketView = basketView;
 		this.gameView = gameView;
 		this.gridPane = gridPane;
+		this.stage = stage;
 	}
 	
 	
 	@Override
 	public void handle(MouseEvent event) {
 		if ((treeList.getTreeList().get(0).getFruitNb() == 0) && (treeList.getTreeList().get(1).getFruitNb() == 0) && (treeList.getTreeList().get(2).getFruitNb() == 0) && (treeList.getTreeList().get(3).getFruitNb() == 0)) {
-			System.out.println("End");
+			GameEndView.gameWin(stage);;
 		}
 		else {
 			diceView.incrementLabelRound();
@@ -85,7 +91,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 			else {
 				
 				diceView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
-				Crow.placingCrow(gridPane);
+				crow.placingCrow(gridPane);
 			}
 		
 	}

@@ -3,16 +3,23 @@ package orchard.application;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import orchard.application.view.GameEndView;
 import orchard.application.view.GameView;
 
 public class Crow {
 	
+	private Stage stage;
+	
+	public Crow(Stage stage) {
+		this.stage = stage;
+	}
 	
 	public static boolean listCrowPieces[] = { false, false, false, false, false, false, false, false, false};
 	
 	
 	
-	public static void placingCrow(GridPane gridPane) {
+	public void placingCrow(GridPane gridPane) {
 		
 		
 		
@@ -20,16 +27,7 @@ public class Crow {
 		
 		while (listCrowPieces[piece] == true && (listCrowPieces[0] == false || listCrowPieces[1] == false || listCrowPieces[2] == false || listCrowPieces[3] == false || listCrowPieces[4] == false || listCrowPieces[5] == false || listCrowPieces[6] == false || listCrowPieces[7] == false || listCrowPieces[8] == false)) {
 				piece = Dice.generateInt(0, 9);
-				System.out.println("test");
-				System.out.println(listCrowPieces[0]);
-				System.out.println(listCrowPieces[1]);
-				System.out.println(listCrowPieces[2]);
-				System.out.println(listCrowPieces[3]);
-				System.out.println(listCrowPieces[4]);
-				System.out.println(listCrowPieces[5]);
-				System.out.println(listCrowPieces[6]);
-				System.out.println(listCrowPieces[7]);
-				System.out.println(listCrowPieces[8]);
+			
 		}
 		if (listCrowPieces[piece] == false) {
 			if (piece == 0) {
@@ -75,6 +73,7 @@ public class Crow {
 			
 			if (listCrowPieces[0] == true && listCrowPieces[1] == true && listCrowPieces[2] == true && listCrowPieces[3] == true && listCrowPieces[4] == true && listCrowPieces[5] == true && listCrowPieces[6] == true && listCrowPieces[7] == true && listCrowPieces[8] == true) {
 				System.out.println("fin");
+				GameEndView.gameLose(this.stage);
 			}
 			
 		}

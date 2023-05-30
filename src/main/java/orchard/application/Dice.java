@@ -9,7 +9,7 @@ public class Dice {
 	Side sideFive = Side.CROW;
 	
 	public Side roll() {
-		int sideNb = 5;
+		int sideNb = generateInt(1, 6);
 		if (sideNb == 1) {
 			return sideOne;
 		}
