@@ -4,6 +4,7 @@ public enum Side {
 	GREEN,
 	RED,
 	YELLOW,
-	BLUE;
+	BLUE,
+	CROW;
 	
 }

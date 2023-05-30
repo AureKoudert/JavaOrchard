@@ -6,9 +6,10 @@ public class Dice {
 	Side sideTwo = Side.RED;
 	Side sideThree = Side.YELLOW;
 	Side sideFour = Side.BLUE;
+	Side sideFive = Side.CROW;
 	
 	public Side roll() {
-		int sideNb = generateInt(1, 5);
+		int sideNb = generateInt(1, 6);
 		if (sideNb == 1) {
 			return sideOne;
 		}
@@ -21,6 +22,9 @@ public class Dice {
 		else if(sideNb == 4) {
 			return sideFour;
 		}		
+		else if(sideNb == 5) {
+			return sideFive;
+		}
 		else {
 			System.out.println("ça marche pas");
 			return null;
