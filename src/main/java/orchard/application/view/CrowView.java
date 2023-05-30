@@ -1,6 +1,5 @@
 package orchard.application.view;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -8,7 +7,7 @@ import javafx.scene.layout.RowConstraints;
 
 public class CrowView {
 	
-	public static void crowPuzzleCreation(GridPane gridPane) {
+	public static GridPane crowPuzzleCreation(GridPane gridPane) {
 		GridPane gridPanePuzzle = new GridPane();
 		for (int i = 0 ; i < 3 ; i ++) {
 			ColumnConstraints column = new ColumnConstraints(100);
@@ -56,6 +55,8 @@ public class CrowView {
 		
 		ImageView nine = GameView.imageCreation("crow_shadow/22.png", 100, 100);
 		gridPanePuzzle.add(nine, 2, 2);
+		
+		return gridPanePuzzle;
 
 		
 		

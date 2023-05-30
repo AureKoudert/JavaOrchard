@@ -2,13 +2,15 @@ package orchard.application.controller;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import orchard.application.Crow;
 import orchard.application.Dice;
 import orchard.application.Game;
 import orchard.application.Side;
-import orchard.application.view.UIView;
 import orchard.application.view.DiceView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
+import orchard.application.view.UIView;
 
 public class DiceController implements EventHandler<MouseEvent>{
 	
@@ -18,18 +20,19 @@ public class DiceController implements EventHandler<MouseEvent>{
 	private DiceView diceView;
 	private UIView basketView;
 	private GameView gameView;
+	private GridPane gridPane;
 
 	
 
 	
 	
-	public DiceController( Game treeList, TreeView treeView, DiceView diceView, UIView basketView, GameView gameView) {
+	public DiceController( Game treeList, TreeView treeView, DiceView diceView, UIView basketView, GameView gameView, GridPane gridPane) {
 		this.treeList = treeList;
 		this.treeView = treeView;
 		this.diceView = diceView;
 		this.basketView = basketView;
 		this.gameView = gameView;
-	
+		this.gridPane = gridPane;
 	}
 	
 	
@@ -82,6 +85,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 			else {
 				
 				diceView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
+				Crow.placingCrow(gridPane);
 			}
 		
 	}

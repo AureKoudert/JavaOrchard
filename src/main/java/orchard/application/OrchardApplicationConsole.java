@@ -68,8 +68,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    Button buttonRoll = diceView.getButtonRoll();
 	    
 	    game.createTreeList();
+	    GridPane crowPuzzle = CrowView.crowPuzzleCreation(root);
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView));
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView, crowPuzzle));
 	    
 	   		
 	    
@@ -78,7 +79,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    
 	    Background background = new Background(backgroundImage);
 	    
-	    CrowView.crowPuzzleCreation(root);
+	   
 	    
 	    
 	    root.setBackground(background);

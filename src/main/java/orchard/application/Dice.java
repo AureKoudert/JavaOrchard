@@ -9,7 +9,7 @@ public class Dice {
 	Side sideFive = Side.CROW;
 	
 	public Side roll() {
-		int sideNb = generateInt(1, 6);
+		int sideNb = 5;
 		if (sideNb == 1) {
 			return sideOne;
 		}
@@ -32,7 +32,7 @@ public class Dice {
 		}
 	}
 	
-	public int generateInt(int borneInf, int borneSup){
+	public static int generateInt(int borneInf, int borneSup){
 		 Random random = new Random();
 		 int nb;
 		 nb = borneInf+random.nextInt(borneSup-borneInf);
