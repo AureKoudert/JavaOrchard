@@ -16,10 +16,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import orchard.application.controller.DiceController;
 import orchard.application.view.CrowView;
-import orchard.application.view.DiceView;
+import orchard.application.view.UIView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
-import orchard.application.view.UIView;
+import orchard.application.view.BasketView;
 
 public class OrchardApplicationConsole extends javafx.application.Application{
 	
@@ -35,11 +35,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		
 		GridPane root = GameView.gridPaneCreation();      
 		TreeView treeView = new TreeView();
-		UIView basketView = new UIView();
+		BasketView basketView = new BasketView();
 		GameView gameView = new GameView();
-		
-		
-		DiceView diceView = new DiceView();
+		UIView diceView = new UIView();
 		
 		
 		
@@ -71,7 +69,7 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    game.createTreeList();
 	    GridPane crowPuzzle = CrowView.crowPuzzleCreation(root);
 	    
-	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView, crowPuzzle, primaryStage));
+	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, diceView, basketView, gameView, crowPuzzle, primaryStage, root));
 	   		
 	    
 		

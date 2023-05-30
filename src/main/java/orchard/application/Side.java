@@ -5,6 +5,7 @@ public enum Side {
 	RED,
 	YELLOW,
 	BLUE,
-	CROW;
+	CROW,
+	BASKET;
 	
 }

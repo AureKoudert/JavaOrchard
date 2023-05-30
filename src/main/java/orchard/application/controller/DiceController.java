@@ -8,7 +8,7 @@ import orchard.application.Crow;
 import orchard.application.Dice;
 import orchard.application.Game;
 import orchard.application.Side;
-import orchard.application.view.DiceView;
+import orchard.application.view.BasketView;
 import orchard.application.view.GameEndView;
 import orchard.application.view.GameView;
 import orchard.application.view.TreeView;
@@ -19,25 +19,29 @@ public class DiceController implements EventHandler<MouseEvent>{
 	private Dice dice = new Dice();
 	private Game treeList;
 	private TreeView treeView;
-	private DiceView diceView;
-	private UIView basketView;
+	private UIView uiView;
+	private BasketView basketView;
 	private GameView gameView;
 	private GridPane gridPane;
 	private Stage stage;
+	private GridPane gridPaneRoot;
+
 
 	Crow crow = new Crow();
 	
 
 	
 	
-	public DiceController( Game treeList, TreeView treeView, DiceView diceView, UIView basketView, GameView gameView, GridPane gridPane, Stage stage) {
+	public DiceController( Game treeList, TreeView treeView, UIView uiView, BasketView basketView, GameView gameView, GridPane gridPane, Stage stage, GridPane gridPaneRoot) {
 		this.treeList = treeList;
 		this.treeView = treeView;
-		this.diceView = diceView;
+		this.uiView = uiView;
 		this.basketView = basketView;
 		this.gameView = gameView;
 		this.gridPane = gridPane;
 		this.stage = stage;
+		this.gridPaneRoot = gridPaneRoot;
+
 	}
 	
 	
@@ -47,7 +51,9 @@ public class DiceController implements EventHandler<MouseEvent>{
 			GameEndView.gameWin(stage);;
 		}
 		else {
-			diceView.incrementLabelRound();
+			uiView.setFruitInvisible();
+			uiView.setLabelBasketSideVisibility(false);
+			uiView.incrementLabelRound();
 			Side side = dice.roll();
 			
 			if  (side == Side.GREEN) {
@@ -55,7 +61,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(0).removeFruit();
 					basketView.setLabelApple("Apple : "+ (10 - treeList.getTreeList().get(0).getFruitNb()));	
-					diceView.setLabelColor(side.toString(), 33, 217, 0, 0, 0, 0);
+					uiView.setLabelColor(side.toString(), 33, 217, 0, 0, 0, 0);
 					
 					
 				}
@@ -65,7 +71,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListPlumImg().get(treeList.getTreeList().get(3).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(3).removeFruit();
 					basketView.setLabelPlum("Plum : "+ (10 - treeList.getTreeList().get(3).getFruitNb()));
-					diceView.setLabelColor(side.toString(), 93, 0, 255, 0, 0, 0);
+					uiView.setLabelColor(side.toString(), 93, 0, 255, 0, 0, 0);
 				}	
 			}
 				
@@ -74,7 +80,7 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(1).removeFruit();
 					basketView.setLabelCherry("Cherry : "+ (10 - treeList.getTreeList().get(1).getFruitNb()));	
-					diceView.setLabelColor(side.toString(), 180, 18, 4, 0, 0, 0);
+					uiView.setLabelColor(side.toString(), 180, 18, 4, 0, 0, 0);
 				}
 			}
 				
@@ -83,14 +89,24 @@ public class DiceController implements EventHandler<MouseEvent>{
 					treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
 					treeList.getTreeList().get(2).removeFruit();
 					basketView.setLabelPear("Pear : "+ (10 - treeList.getTreeList().get(2).getFruitNb()));			
-					diceView.setLabelColor(side.toString(), 255, 230, 0, 0, 0, 0);
+					uiView.setLabelColor(side.toString(), 255, 230, 0, 0, 0, 0);
 				
 				}
 			}
-			else {
-				
-				diceView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
+			else if (side == side.CROW){	
+				uiView.setLabelColor(side.toString(), 0, 0, 0, 255, 255, 255);
 				crow.placingCrow(gridPane, stage);
+			}
+			else if (side == side.BASKET){
+				uiView.setLabelColor(side.toString(), 255, 255, 255, 0, 0, 0);
+				uiView.setLabelBasketSideVisibility(true);
+				uiView.setFruitVisible(gridPaneRoot, treeList);
+				
+		
+			}
+			
+			else {
+				System.out.println("Problem.");
 			}
 		
 	}
