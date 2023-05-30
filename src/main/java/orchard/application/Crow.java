@@ -16,10 +16,20 @@ public class Crow {
 		
 		
 		
-		int piece = Dice.generateInt(0, 8);
+		int piece = Dice.generateInt(0, 9);
 		
 		while (listCrowPieces[piece] == true && (listCrowPieces[0] == false || listCrowPieces[1] == false || listCrowPieces[2] == false || listCrowPieces[3] == false || listCrowPieces[4] == false || listCrowPieces[5] == false || listCrowPieces[6] == false || listCrowPieces[7] == false || listCrowPieces[8] == false)) {
-				piece = Dice.generateInt(0, 8);
+				piece = Dice.generateInt(0, 9);
+				System.out.println("test");
+				System.out.println(listCrowPieces[0]);
+				System.out.println(listCrowPieces[1]);
+				System.out.println(listCrowPieces[2]);
+				System.out.println(listCrowPieces[3]);
+				System.out.println(listCrowPieces[4]);
+				System.out.println(listCrowPieces[5]);
+				System.out.println(listCrowPieces[6]);
+				System.out.println(listCrowPieces[7]);
+				System.out.println(listCrowPieces[8]);
 		}
 		if (listCrowPieces[piece] == false) {
 			if (piece == 0) {
