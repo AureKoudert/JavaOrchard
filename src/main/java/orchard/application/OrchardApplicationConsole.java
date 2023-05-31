@@ -32,8 +32,6 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	}
 	
 	public void start(Stage primaryStage){
-		
-		
 	
 		Game game = new Game();
 		
@@ -43,9 +41,6 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 		GameView gameView = new GameView();
 		UIView uiView = new UIView();
 		
-		
-		
- 
 		
         GameView.treePlacing(root);
 	  
@@ -76,9 +71,9 @@ public class OrchardApplicationConsole extends javafx.application.Application{
 	    buttonRoll.addEventFilter(MouseEvent.MOUSE_PRESSED, new DiceController(game, treeView, uiView, basketView, gameView, crowPuzzle, primaryStage, root));
 	   	
 	    uiView.getListFruitImg().get(0).addEventFilter(MouseEvent.MOUSE_PRESSED, new AppleController(game, treeView, basketView));
-	    uiView.getListFruitImg().get(1).addEventFilter(MouseEvent.MOUSE_PRESSED, new PearController(game, treeView, basketView));
-	    uiView.getListFruitImg().get(2).addEventFilter(MouseEvent.MOUSE_PRESSED, new PlumController(game, treeView, basketView));
-	    uiView.getListFruitImg().get(3).addEventFilter(MouseEvent.MOUSE_PRESSED, new CherryController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(2).addEventFilter(MouseEvent.MOUSE_PRESSED, new PearController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(3).addEventFilter(MouseEvent.MOUSE_PRESSED, new PlumController(game, treeView, basketView));
+	    uiView.getListFruitImg().get(1).addEventFilter(MouseEvent.MOUSE_PRESSED, new CherryController(game, treeView, basketView));
 	    
 		
 	    BackgroundImage backgroundImage = new BackgroundImage(new Image("background/4couleur.jpg"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(900, 900, false, false, false, false));

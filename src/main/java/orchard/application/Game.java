@@ -11,6 +11,7 @@ public class Game {
 	
 	private ArrayList<Tree> treeList = new ArrayList<Tree>();
 	private ArrayList<Basket> basketList = new ArrayList<Basket>();
+	private int counter = 0;
 	
 
 
@@ -36,6 +37,22 @@ public class Game {
 
 	public ArrayList<Basket> getBasketList() {
 		return this.basketList;
+	}
+	
+	public int getCounter() {
+		return this.counter;
+	}
+	
+	public void addOneToCounter() {
+		this.counter = this.counter + 1;
+	}
+	
+	public void resetCounter() {
+		this.counter = 0;
+	}
+	
+	public void setCountertoTwo() {
+		this.counter = 2;
 	}
 	
 	

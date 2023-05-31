@@ -16,18 +16,24 @@ public class CherryController implements EventHandler<MouseEvent>{
 		this.treeList = treeList;
 		this.treeView = treeView;
 		this.basketView = basketView;
-		
 	}
+		
 	
 	@Override
 	public void handle(MouseEvent event) {
-		if (treeList.getTreeList().get(1).getFruitNb() != 0) {
-			treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
-			treeList.getTreeList().get(1).removeFruit();
-			basketView.setLabelCherry("Cherry : "+ (10 - treeList.getTreeList().get(1).getFruitNb()));						
+		if (treeList.getCounter() == 2) {
+			System.out.println("No");
 		}
-		
+		else {
+			if (treeList.getTreeList().get(1).getFruitNb() != 0) {
+				treeView.getListCherryImg().get(treeList.getTreeList().get(1).getFruitNb()-1).setVisible(false);
+				treeList.getTreeList().get(1).removeFruit();
+				basketView.setLabelCherry("Cherry : "+ (10 - treeList.getTreeList().get(1).getFruitNb()));	
+				treeList.addOneToCounter(); 
+			}
+		}
 	}
 	
 	
 }
+

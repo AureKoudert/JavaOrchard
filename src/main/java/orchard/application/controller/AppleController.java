@@ -12,6 +12,7 @@ public class AppleController implements EventHandler<MouseEvent>{
 	private TreeView treeView;
 	private BasketView basketView;
 	
+	
 	public AppleController(Game treeList, TreeView treeView, BasketView basketView ) {
 		this.treeList = treeList;
 		this.treeView = treeView;
@@ -21,12 +22,18 @@ public class AppleController implements EventHandler<MouseEvent>{
 	
 	@Override
 	public void handle(MouseEvent event) {
-		if (treeList.getTreeList().get(0).getFruitNb() != 0) {
-			treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
-			treeList.getTreeList().get(0).removeFruit();
-			basketView.setLabelApple("Apple : "+ (10 - treeList.getTreeList().get(0).getFruitNb()));						
+		if (treeList.getCounter() == 2) {
+			System.out.println("No.");
 		}
+		else {		
 		
+			if (treeList.getTreeList().get(0).getFruitNb() != 0) {
+				treeView.getListAppleImg().get(treeList.getTreeList().get(0).getFruitNb()-1).setVisible(false);
+				treeList.getTreeList().get(0).removeFruit();
+				basketView.setLabelApple("Apple : "+ (10 - treeList.getTreeList().get(0).getFruitNb()));	
+				treeList.addOneToCounter();
+			}
+		}
 	}
 	
 	

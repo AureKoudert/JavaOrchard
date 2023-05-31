@@ -25,7 +25,7 @@ public class UIView {
 	private Button buttonRoll = new Button("Roll");
 	Label labelRound = new Label("Round : 0");
 	int counter = 0;
-	Label labelBasketSide = new Label("Chose 2 fruits by clicking on their tree");
+	Label labelBasketSide = new Label("Choose 2 fruits by clicking on their fruit on the right.");
 	private List<ImageView> listFruitImg = new ArrayList<>();
 	
 	
@@ -47,7 +47,9 @@ public class UIView {
         hBoxButton.getChildren().add(this.buttonRoll);
         hBoxButton.getChildren().add(labelRound);
         gridPane.add(labelBasketSide, 0, 3);
+        labelBasketSide.setPadding(new Insets(0, 0, 0, 10));
         labelBasketSide.setVisible(false);
+        
         labelRound.setPrefWidth(75);
         hBoxButton.setSpacing(25);
         setLabelBorder();
@@ -120,9 +122,9 @@ public class UIView {
 		
 		
 		listFruitImg.add(apple);
+		listFruitImg.add(cherry);
 		listFruitImg.add(pear);
 		listFruitImg.add(plum);
-		listFruitImg.add(cherry);
 		
 		
 	}
