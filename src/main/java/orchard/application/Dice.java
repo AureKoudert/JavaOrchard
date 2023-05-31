@@ -2,14 +2,19 @@ package orchard.application;
 import java.util.Random;
 
 public class Dice {
+	//attribution des couleurs aux différents côtés
 	Side sideOne = Side.GREEN;
 	Side sideTwo = Side.RED;
 	Side sideThree = Side.YELLOW;
 	Side sideFour = Side.BLUE;
 	Side sideFive = Side.CROW;
+	Side sideSix = Side.BASKET;
 	
+	//fonction permettant de lancer le dé
 	public Side roll() {
-		int sideNb = generateInt(1, 6);
+		//génère un entier entre 1 et 6
+		int sideNb = generateInt(1, 7);
+		//renvoie la face sur laquelle on est tombée
 		if (sideNb == 1) {
 			return sideOne;
 		}
@@ -25,13 +30,17 @@ public class Dice {
 		else if(sideNb == 5) {
 			return sideFive;
 		}
+		else if(sideNb == 6) {
+			return sideSix;
+		}
 		else {
-			System.out.println("ça marche pas");
+			System.out.println("Problem");
 			return null;
 			
 		}
 	}
 	
+	//fonction permettant de générer un entier aléatoire 
 	public static int generateInt(int borneInf, int borneSup){
 		 Random random = new Random();
 		 int nb;
@@ -40,7 +49,5 @@ public class Dice {
 		}
 	
 	
-	public void dicePrint() {
-		
-	}
+	
 }
