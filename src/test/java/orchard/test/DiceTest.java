@@ -18,7 +18,9 @@ public class DiceTest {
 				() -> assertEquals(generation,(Side.GREEN)),
 				() -> assertEquals(generation,(Side.RED)),
 				() -> assertEquals(generation,(Side.BLUE)),
-				() -> assertEquals(generation,(Side.YELLOW))
+				() -> assertEquals(generation,(Side.YELLOW)),
+				() -> assertEquals(generation,(Side.CROW)),
+				() -> assertEquals(generation,(Side.BASKET))
 		);
 	}
 
