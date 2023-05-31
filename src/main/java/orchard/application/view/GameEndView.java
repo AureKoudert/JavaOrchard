@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 public class GameEndView {
 	
+	//fonction permettant de créer une fenetre de défaite
 	public static void gameLose(Stage previousStage) {
 		BorderPane borderPane = new BorderPane();
 		
@@ -26,6 +27,7 @@ public class GameEndView {
 		stage.show();
 	}
 	
+	//fonction permettant de créer une fenetre de victoire
 	public static void gameWin(Stage previousStage) {
 		BorderPane borderPane = new BorderPane();
 		

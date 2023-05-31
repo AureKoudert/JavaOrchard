@@ -7,21 +7,25 @@ import javafx.scene.layout.RowConstraints;
 
 public class CrowView {
 	
+	//fonction permettant de créer un gridpane sur une case d'une gridpane (root) et de placer dans chaque case une image du corbeau
 	public static GridPane crowPuzzleCreation(GridPane gridPane) {
 		GridPane gridPanePuzzle = new GridPane();
+		//créer 3 colonnes de 100*100 pixels
 		for (int i = 0 ; i < 3 ; i ++) {
 			ColumnConstraints column = new ColumnConstraints(100);
 			gridPanePuzzle.getColumnConstraints().add(column);
 	     }
-	
+		
+		//créer 3 lignes de 100*100 pixels
 		for (int i = 0 ; i < 3 ; i ++) {
 			RowConstraints row = new RowConstraints(100);
 			gridPanePuzzle.getRowConstraints().add(row);
 	     }
 		
-		
+		//ajoute la nouvelle gridpane à la case centrale de la gridpane root
 		gridPane.add(gridPanePuzzle, 1, 1);
 		
+		//création de neuf image du corbeau en 100*100 pixels et les places dans chaque cases du nouveau gridpane
 		ImageView one = GameView.imageCreation("crow_shadow/00.png", 100, 100);
 		gridPanePuzzle.add(one, 0, 0);
 		

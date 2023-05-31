@@ -12,7 +12,7 @@ public class PearController implements EventHandler<MouseEvent>{
 	private TreeView treeView;
 	private BasketView basketView;
 	
-	//création de CherryController 
+	//création de PearController 
 	public PearController(Game treeList, TreeView treeView, BasketView basketView ) {
 		this.treeList = treeList;
 		this.treeView = treeView;
@@ -33,7 +33,7 @@ public class PearController implements EventHandler<MouseEvent>{
 				treeView.getListPearImg().get(treeList.getTreeList().get(2).getFruitNb()-1).setVisible(false);
 				//retire le dernier fruit du troisième arbre de la liste (poirier)
 				treeList.getTreeList().get(2).removeFruit();
-				//met à jour le label sur le panier donnant le nombre de poirier
+				//met à jour le label sur le panier donnant le nombre de poire
 				basketView.setLabelPear("Pear : "+ (10 - treeList.getTreeList().get(2).getFruitNb()));	
 				//ajoute 1 au compteur
 				treeList.addOneToCounter();

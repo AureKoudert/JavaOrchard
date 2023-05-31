@@ -8,7 +8,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
@@ -19,10 +18,9 @@ public class BasketView {
 	private Label labelCherry = new Label();
 	private Label labelPlum = new Label();
 	
-
+	//fonction permettant de créer une image de panier, de l'ajouter au gridpane et de créer les labels des paniers avec leurs paramètres
 	public static Label basketCreation(GridPane gridPane, int posY, int posX, String text, int r, int g, int b){
 		ImageView imageViewBasket = GameView.imageCreation("/basket_img.png", 200, 300);
-		
 		gridPane.add(imageViewBasket, posY, posX);
 		VBox vBoxBasket = new VBox();
 		gridPane.add(vBoxBasket, posY, posX);
@@ -37,15 +35,15 @@ public class BasketView {
 		return labelBasket;
 	}
 	
-	public void basketPlacing(GridPane root) {
-		
+	//fonction permettant de récupérer les différents label des paniers (afin de pouvoir les modifiers facilement)
+	public void basketPlacing(GridPane root) {	
 		this.labelApple = BasketView.basketCreation(root, 1, 0, "Apple : 0", 33, 217, 0);
 		this.labelPear = BasketView.basketCreation(root, 2, 1, "Pear : 0", 255, 230, 0);
 		this.labelCherry = BasketView.basketCreation(root, 1, 2, "Cherry : 0", 180, 18, 4);
 		this.labelPlum = BasketView.basketCreation(root, 0, 1, "Plum : 0", 93, 0, 255);
 	}
 	
-	
+	//les fonctions suivantes permettent d'obtenir tous les labels et de leur mettre un nouveau textes
 	public Label getLabelApple() {
 		return labelApple;
 	}
