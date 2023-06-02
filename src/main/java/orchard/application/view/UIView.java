@@ -34,7 +34,6 @@ public class UIView {
 		return listFruitImg;
 	}
 	
-	//fonction permettant d'ajouter le bouton roll et tout ce qui concerne le bouton (labels...)
 	public void placingRollButton(GridPane gridPane) {
 		
 		setFruit(gridPane);
@@ -57,58 +56,46 @@ public class UIView {
         
 	}
 	
-	//fonction permettant de mettre visible ou non le label apparaissant lorsque l'on tombe sur la face basket
 	public void setLabelBasketSideVisibility(boolean bool) {
 		labelBasketSide.setVisible(bool);
 	}
 	
 
-	//fonction permettant de renvoyer  le label de la couleur de la face
 	public Label getLabelColor() {
 		return labelColor;
 	}
 
-	//fonction permettant de modifier le texte du label de la couleur de la face
 	public void setLabelColor(String color, int r, int g, int b, int r2, int g2, int b2) {
 		labelColor.setText(color);
-		//change la couleur de son texte
 		labelColor.setTextFill(Color.rgb(r2, g2, b2));
-		//met le texte en gras
 		labelColor.setStyle("-fx-font-weight: bold");
-		//change la couleur de son fond 
 		labelColor.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 0.80),  new CornerRadii(5.0), Insets.EMPTY)));
 
 	}
 	
 	
-	//fonction permettant de mettre des bordures à LabelColor
 	public void setLabelBorder() {
-		//labelColor.setBackground(new Background(new BackgroundFill(Color.rgb(r, g, b, 1), new CornerRadii(150.5), Insets.EMPTY)));
 		labelColor.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, new CornerRadii(5.0), new BorderWidths(1))));
 		labelColor.setPadding(new Insets(10, 10, 10, 10));
 		labelColor.setPrefWidth(75);
 		labelColor.setAlignment(Pos.CENTER);
 	}
 	
-	//fonction permettant d'incrémenter de 1 le compteur de tour et de le mettre à jour
 	public void incrementLabelRound() {
 		counter += 1;
 		labelRound.setText("Round : "+counter);
 	}
 	
-	//fonction permettant de créer un label à afficher lorsque l'on tombe sur la face basket
 	public void createLabelToChoseFruit(HBox hBox) {
 		Label label = new Label("Chose 2 fruits by clicking on a tree");
 		hBox.getChildren().add(label);
 		
 	}
 
-	//fonction permettant de revnoyer le buttonRolll
 	public Button getButtonRoll() {
 		return buttonRoll;
 	}
 	
-	//fonction permettant d'ajouter les 4 fruits dans l'UI et de l'ajouter dans une liste
 	public void setFruit(GridPane gridPane) {
 		HBox hBox = new HBox();
 		gridPane.add(hBox, 2, 3);
@@ -135,7 +122,6 @@ public class UIView {
 		
 	}
 	
-	//fonction permettant d'afficher ou non les fruits en fonction de s'il en reste dans les arbres ou non
 	public void setFruitVisible(GridPane gridPane, Game treeList) {
 		if (treeList.getTreeList().get(0).getFruitNb() != 0) {
 			listFruitImg.get(0).setVisible(true);
@@ -152,7 +138,6 @@ public class UIView {
 		
 	}
 	
-	//fonction permettant de mettre les fruits invisible
 	public void setFruitInvisible() {
 		listFruitImg.get(0).setVisible(false);
 		listFruitImg.get(1).setVisible(false);
